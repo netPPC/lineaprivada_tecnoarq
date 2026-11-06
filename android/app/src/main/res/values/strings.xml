@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Linea Privada</string>
+    <string name="accessibility_service_label">Linea Privada — Cortar llamadas</string>
+    <string name="accessibility_service_description">Permite a Linea Privada presionar el botón de colgar/rechazar cuando una llamada de número desconocido supera el tope de 5 tonadas. Esto es necesario en equipos sin root donde Android no permite a otras apps colgar llamadas.</string>
+</resources>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linea Privada TecnoarqueologiC — Manual de Usuario</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0e1e24; color: #e0e0e0; line-height: 1.6; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; background: #162b33; border-radius: 16px; padding: 40px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+        h1 { color: #3aabbb; border-bottom: 2px solid #3aabbb; padding-bottom: 10px; }
+        h2 { color: #3aabbb; margin-top: 30px; }
+        h3 { color: #8ee6e6; }
+        .badge { display: inline-block; background: #00796b; color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.85em; margin-right: 8px; }
+        .feature-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .feature-table th, .feature-table td { border: 1px solid #3aabbb; padding: 10px; text-align: left; }
+        .feature-table th { background: #3aabbb; color: #0e1e24; }
+        .feature-table tr:nth-child(even) { background: #1e3a44; }
+        .captura { margin: 20px 0; text-align: center; border: 1px solid #3aabbb; border-radius: 8px; overflow: hidden; }
+        .captura img { max-width: 100%; height: auto; display: block; }
+        .captura-label { padding: 8px; background: #1e3a44; color: #3aabbb; font-weight: bold; font-size: 0.9em; }
+        .snippet { background: #1e3a44; padding: 12px; border-radius: 6px; font-family: monospace; font-size: 0.85em; margin: 10px 0; }
+        .footer { margin-top: 40px; border-top: 1px solid #3aabbb; padding-top: 20px; color: #888; font-size: 0.9em; text-align: center; }
+        .highlight { color: #4caf50; font-weight: bold; }
+        ul { padding-left: 20px; }
+        li { margin: 8px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ Linea Privada TecnoarqueologiC</h1>
+        <p><strong>Manual de Usuario — Beta 2.0</strong></p>
+        <p><em>Bloqueador y filtro de llamadas y SMS desconocidos + sincronización con base comunitaria.</em></p>
+        <p><span class="badge">Android 9 → 16</span> <span class="badge">HyperOS / MIUI</span> <span class="badge">EMUI / HarmonyOS</span></p>
+
+        <h2>1. Instalación</h2>
+        <ol>
+            <li>Descarga el archivo <code>app-release.apk</code> desde la página de descarga.</li>
+            <li>Copia el APK al equipo (Xiaomi Note 11 o cualquier Android 9+).</li>
+            <li>Ábrelo y toca <strong>"Instalar"</strong>. Acepta "Instalar apps desconocidas" si el sistema lo solicita.</li>
+            <li>En la primera apertura, concede todos los permisos que pida: teléfono, contactos, SMS, notificaciones.</li>
+            <li>Acepta el rol de <strong>Teléfono por defecto</strong> y de <strong>Filtrado de llamadas</strong> cuando el sistema lo ofrezca.</li>
+            <li>En la solicitud de <strong>Accesibilidad</strong>, actívala (opcional pero recomendada para el corte automático en equipos sin permisos de sistema).</li>
+        </ol>
+
+        <div class="captura">
+            <div class="captura-label">Pantalla de bienvenida (Splash)</div>
+            <img src="captura_splash.png" alt="Splash screen de Linea Privada">
+        </div>
+
+        <h2>2. Uso básico</h2>
+
+        <h3>2.1 Pantalla principal</h3>
+        <p>Desde la pantalla principal puedes:</p>
+        <ul>
+            <li>Encender o apagar la app con el interruptor general.</li>
+            <li>Abrir el marcador telefónico con el botón <strong>"Marcar número"</strong>.</li>
+            <li>Configurar las reglas de filtrado (bloquear desconocidos, anti-spam, internacionales, SMS).</li>
+            <li>Sincronizar la lista negra con Google Drive.</li>
+            <li>Reportar números de spam a la base comunitaria.</li>
+            <li>Ver y gestionar números bloqueados y SMS filtrados.</li>
+        </ul>
+
+        <div class="captura">
+            <div class="captura-label">Pantalla principal (Home)</div>
+            <img src="captura_home.png" alt="Pantalla principal de Linea Privada">
+        </div>
+
+        <h3>2.2 Marcador telefónico</h3>
+        <ul>
+            <li>Teclado numérico 0-9, <code>*</code> y <code>#</code>.</li>
+            <li>Botón <code>⌫</code> borra el último dígito (mantén presionado para limpiar todo).</li>
+            <li>Botón verde <strong>📞 Llamar</strong>: inicia la llamada.</li>
+            <li>Botón rojo <strong>📵</strong>: cuelga si hay llamada en curso.</li>
+            <li>Accesos directos: <strong>Contactos</strong>, <strong>Perdidas</strong>, <strong>Altavoz</strong>.</li>
+        </ul>
+
+        <h3>2.3 Duración de la llamada (DTMF)</h3>
+        <p>Al estar en una llamada conectada, el teclado envía tonos DTMF para navegar menús automáticos (servicios de atención, IVR). Solo presiona la opción que necesites: 1, 2, 3...</p>
+
+        <h2>3. Filtrado automático de desconocidos</h2>
+        <ul>
+            <li><span class="highlight">Primera vez:</span> si un número desconocido llama por primera vez, la aplicación <strong>no filtra</strong> la llamada. Suena normalmente y el usuario decide si contesta o no.</li>
+            <li><span class="highlight">Desde la segunda vez:</span> se aplican las reglas del filtro (ráfaga de llamadas, prefijos quemados, lista negra comunitaria, etc.).</li>
+            <li>Las llamadas de tus contactos o números en la lista blanca <strong>sí suenan</strong> normalmente.</li>
+            <li>Las llamadas desconocidas sin ráfaga suenan con <strong>tope de 7 tonadas</strong>; si nadie contesta, la app intenta colgar.</li>
+            <li>Los SMS de desconocidos se filtran y aparecen en la sección de mensajes filtrados.</li>
+        </ul>
+
+        <div class="captura">
+            <div class="captura-label">Números bloqueados</div>
+            <img src="captura_bloqueados.png" alt="Lista de números bloqueados">
+        </div>
+
+        <div class="captura">
+            <div class="captura-label">SMS filtrados</div>
+            <img src="captura_sms.png" alt="Lista de SMS filtrados">
+        </div>
+
+        <h2>4. Configuración de bloqueo</h2>
+        <table class="feature-table">
+            <thead>
+                <tr><th>Opción</th><th>Descripción</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Bloquear Números Desconocidos</td><td>Bloquea automáticamente números fuera de tu agenda.</td></tr>
+                <tr><td>Filtro Anti-Spam Activo</td><td>Detecta y bloquea llamadas sospechosas (call centers, ráfagas, prefijos quemados).</td></tr>
+                <tr><td>Permitir Prefijos Internacionales</td><td>No bloquear llamadas fuera de +56 (Chile).</td></tr>
+                <tr><td>Filtrar SMS de Desconocidos</td><td>Cuarentena mensajes de números fuera de la agenda.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>5. Sincronización con Google Drive</h2>
+        <p>La base de datos comunitaria se descarga desde una hoja pública de Google Sheets y los bloqueos automáticos se suben para compartir con otros usuarios.</p>
+        <ul>
+            <li>Toca <strong>"Sincronizar Lista Global"</strong> para descargar la base negra actualizada.</li>
+            <li>Toca <strong>"Reportar"</strong> para subir un número posible spam a la base comunitaria.</li>
+            <li>La aplicación verifica conectividad antes de sincronizar. Si no hay internet, muestra un aviso claro.</li>
+        </ul>
+
+        <h2>6. Reglas de bloqueo automático</h2>
+        <ol>
+            <li>Número oculto / privado → bloqueo inmediato.</li>
+            <li>Internacional (fuera de +56, salvo permiso) → bloqueo inmediato.</li>
+            <li>Estructura extraña / Call Center → bloqueo inmediato.</li>
+            <li>Match completo contra base comunitaria → bloqueo inmediato.</li>
+            <li>Prefijo quemado (primeros 4-5 dígitos) → bloqueo inmediato.</li>
+            <li>Ráfaga: ≥6 llamadas del mismo número en 24h (o 6 en 4h) → bloqueo.</li>
+            <li>Volumen de prefijo: >5 números distintos con mismo prefijo → se quema y bloquea.</li>
+            <li>Contactos y lista blanca → pasan sin intervención.</li>
+            <li>Desconocido primera vez → suena normalmente, el usuario decide.</li>
+        </ol>
+
+        <h2>7. Solución de problemas</h2>
+        <table class="feature-table">
+            <thead><tr><th>Problema</th><th>Solución</th></tr></thead>
+            <tbody>
+                <tr><td>La app no abre el marcador</td><td>Reabre la app y toca "Marcar número".</td></tr>
+                <tr><td>No corta llamadas desconocidas</td><td>Revisa que el rol de "Filtrado de llamadas" y "Accesibilidad" estén activos en Ajustes > Apps > Linea Privada > Permisos.</td></tr>
+                <tr><td>No llegan notificaciones</td><td>Concede permiso de notificaciones y excluye la app del ahorro de batería.</td></tr>
+                <tr><td>Sincronización falla</td><td>Verifica que tengas conexión a internet activa.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>8. Ajustes recomendados (Xiaomi HyperOS / MIUI)</h2>
+        <ul>
+            <li>Ve a <strong>Ajustes > Aplicaciones > Linea Privada > Batería</strong> y selecciona <strong>"Sin restricciones"</strong>.</li>
+            <li>Ve a <strong>Ajustes > Aplicaciones > Linea Privada > Permisos</strong> y activa todos los permisos.</li>
+            <li>En <strong>Ajustes > Accesibilidad</strong>, activa el servicio "Linea Privada — Cortar llamadas".</li>
+        </ul>
+
+        <div class="footer">
+            <p><strong>Linea Privada TecnoarqueologiC — Beta 2.0</strong></p>
+            <p>Desarrollado por TecnoarqueologiC Soluciones TI · Android 9 → 16 · HyperOS · EMUI</p>
+            <p>Para reportar errores, contacta al desarrollador con detalle de lo ocurrido.</p>
+        </div>
+    </div>
+</body>
+</html>

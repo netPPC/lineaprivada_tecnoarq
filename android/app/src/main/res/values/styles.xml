@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema del arranque de Linea Privada (fondo oscuro + logo) -->
+    <style name="LaunchTheme" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+    <!-- Tema normal: fondo oscuro para evitar el flash blanco -->
+    <style name="NormalTheme" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/splash_fondo</item>
+    </style>
+
+    <!-- Botón del teclado del marcador (icono personalizado PNG) -->
+    <style name="BotonDialerIcono" parent="@android:style/Widget.Material.Button.Borderless">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- Botón del teclado del marcador (estilo nativo, circular y compacto) -->
+    <style name="BotonDialer" parent="@android:style/Widget.Material.Button.Borderless">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:background">@drawable/bg_boton_dialer</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- Acceso directo del marcador (contactos, perdidas, altavoz) -->
+    <style name="BotonAcceso" parent="@android:style/Widget.Material.Button.Borderless">
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:background">@drawable/bg_boton_dialer</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- Botón del teclado DTMF de la pantalla de llamada (igual que el marcador) -->
+    <style name="BotonDtmf" parent="@android:style/Widget.Material.Button.Borderless">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:background">@drawable/bg_boton_dialer</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- Botón de control durante llamada (altavoz, silencio) -->
+    <style name="BotonControlLlamada" parent="@android:style/Widget.Material.Button.Borderless">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@drawable/bg_boton_dialer</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- Botón de responder (verde, redondo) -->
+    <style name="BotonResponder" parent="@android:style/Widget.Material.Button.Borderless">
+        <item name="android:layout_width">66dp</item>
+        <item name="android:layout_height">66dp</item>
+        <item name="android:background">@drawable/bg_boton_llamar</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- Botón de rechazar (rojo, redondo) -->
+    <style name="BotonRechazar" parent="@android:style/Widget.Material.Button.Borderless">
+        <item name="android:layout_width">66dp</item>
+        <item name="android:layout_height">66dp</item>
+        <item name="android:background">@drawable/bg_boton_colgar</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- Botón de colgar (rojo, redondo) -->
+    <style name="BotonControlColgar" parent="@android:style/Widget.Material.Button.Borderless">
+        <item name="android:layout_width">66dp</item>
+        <item name="android:layout_height">66dp</item>
+        <item name="android:background">@drawable/bg_boton_colgar</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <!-- Botón de llamar (verde, redondo) -->
+    <style name="BotonControlLlamar" parent="@android:style/Widget.Material.Button.Borderless">
+        <item name="android:layout_width">66dp</item>
+        <item name="android:layout_height">66dp</item>
+        <item name="android:layout_marginStart">56dp</item>
+        <item name="android:background">@drawable/bg_boton_llamar</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+</resources>

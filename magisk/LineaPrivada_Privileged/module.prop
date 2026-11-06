@@ -1,0 +1,6 @@
+id=lineaprivada_privileged
+name=Linea Privada (App Privilegiada)
+version=v1.0
+versionCode=1
+author=TecnoArq
+description=Instala Linea Privada como app privilegiada del sistema (/system/priv-app) para conceder MODIFY_PHONE_STATE y permitir la inyeccion directa de audio en el canal de voz de la llamada (uplink) sin que suene en el parlante del receptor.

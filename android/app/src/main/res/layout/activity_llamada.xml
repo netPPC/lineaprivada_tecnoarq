@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Pantalla de llamada unificada al estilo del marcador: fondo oscuro,
+     botones circulares y teclado DTMF compacto. Muestra número, estado y
+     controles (altavoz, silencio, colgar; responder/rechazar en entrantes). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#111111"
+    android:padding="24dp">
+
+    <!-- Número -->
+    <TextView
+        android:id="@+id/txt_numero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="—"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:maxLines="2"
+        android:gravity="center" />
+
+    <!-- Estado / motivo -->
+    <TextView
+        android:id="@+id/txt_estado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="—"
+        android:textColor="#9E9E9E"
+        android:textSize="15sp"
+        android:gravity="center" />
+
+    <!-- Botones: responder / rechazar (solo entrante sonando) -->
+    <LinearLayout
+        android:id="@+id/fila_entrante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_rechazar"
+                style="@style/BotonRechazar"
+                android:text="✕" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Rechazar"
+                android:textColor="#BBBBBB"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_responder"
+                style="@style/BotonResponder"
+                android:text="📞" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Responder"
+                android:textColor="#BBBBBB"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Atajos durante la llamada: altavoz, silencio, colgar -->
+    <LinearLayout
+        android:id="@+id/fila_atajos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_altavoz"
+                style="@style/BotonControlLlamada"
+                android:text="🔊" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Altavoz"
+                android:textColor="#BBBBBB"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_silencio"
+                style="@style/BotonControlLlamada"
+                android:text="🎤" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Silencio"
+                android:textColor="#BBBBBB"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_colgar"
+                style="@style/BotonControlColgar"
+                android:text="📞" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Colgar"
+                android:textColor="#BBBBBB"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Teclado DTMF compacto (visible durante llamada conectada) -->
+    <LinearLayout
+        android:id="@+id/panel_dtmf"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- Fila 1: 1 2 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/dtmf_1"
+                style="@style/BotonDtmf"
+                android:text="1" />
+            <Button
+                android:id="@+id/dtmf_2"
+                style="@style/BotonDtmf"
+                android:text="2" />
+            <Button
+                android:id="@+id/dtmf_3"
+                style="@style/BotonDtmf"
+                android:text="3" />
+        </LinearLayout>
+
+        <!-- Fila 2: 4 5 6 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/dtmf_4"
+                style="@style/BotonDtmf"
+                android:text="4" />
+            <Button
+                android:id="@+id/dtmf_5"
+                style="@style/BotonDtmf"
+                android:text="5" />
+            <Button
+                android:id="@+id/dtmf_6"
+                style="@style/BotonDtmf"
+                android:text="6" />
+        </LinearLayout>
+
+        <!-- Fila 3: 7 8 9 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/dtmf_7"
+                style="@style/BotonDtmf"
+                android:text="7" />
+            <Button
+                android:id="@+id/dtmf_8"
+                style="@style/BotonDtmf"
+                android:text="8" />
+            <Button
+                android:id="@+id/dtmf_9"
+                style="@style/BotonDtmf"
+                android:text="9" />
+        </LinearLayout>
+
+        <!-- Fila 4: * 0 # -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/dtmf_asterisco"
+                style="@style/BotonDtmf"
+                android:text="*" />
+            <Button
+                android:id="@+id/dtmf_0"
+                style="@style/BotonDtmf"
+                android:text="0" />
+            <Button
+                android:id="@+id/dtmf_numeral"
+                style="@style/BotonDtmf"
+                android:text="#" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
